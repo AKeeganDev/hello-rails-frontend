@@ -1,8 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
-});
+const initialState = {
+  greetings: 'hi',
+}
+
+function rootReducer(state = initialState, action) {
+  switch (action.type){
+    case 'GET_GREETINGS_SUCCESS':
+      console.log({...state,
+        greetings: action.payload.greetings})
+      return {
+        ...state,
+        greetings: action.payload.greetings
+      };
+      default:
+        return state;
+  }
+}
+
+export const store = createStore( rootReducer
+  , applyMiddleware(thunk));
