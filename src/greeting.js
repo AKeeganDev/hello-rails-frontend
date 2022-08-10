@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -27,19 +27,21 @@ export function getGreetingsSuccess(json) {
 }
 
 class Greeting extends React.Component {
-  render () {
-    console.log(`this is ${this.props.greetings}`)
+  render() {
+    console.log(`this is ${this.props.greetings}`);
     return (
-      <React.Fragment>
-        Greeting: {this.props.greetings}
+      <>
+        Greeting:
+        {' '}
+        {this.props.greetings}
         <button className="getGreetingsBtn" onClick={() => this.props.getGreeting()}>Get Greeting</button>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 const structuredSelector = createStructuredSelector({
-  greetings: state => state.greetings,
+  greetings: (state) => state.greetings,
 });
 
 const mapDispatchToProps = { getGreeting };

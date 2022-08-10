@@ -3,21 +3,23 @@ import thunk from 'redux-thunk';
 
 const initialState = {
   greetings: 'hi',
-}
+};
 
 function rootReducer(state = initialState, action) {
-  switch (action.type){
+  switch (action.type) {
     case 'GET_GREETINGS_SUCCESS':
-      console.log({...state,
-        greetings: action.payload.greetings})
+      console.log({
+        ...state,
+        greetings: action.payload.greetings,
+      });
       return {
         ...state,
-        greetings: action.payload.greetings
+        greetings: action.payload.greetings,
       };
-      default:
-        return state;
+    default:
+      return state;
   }
 }
 
-export const store = createStore( rootReducer
-  , applyMiddleware(thunk));
+export const store = createStore(rootReducer,
+  applyMiddleware(thunk));
