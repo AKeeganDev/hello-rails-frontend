@@ -7,10 +7,12 @@ import { createStructuredSelector } from 'reselect';
 const GET_GREETINGS_REQUEST = 'GET_GREETINGS_REQUEST';
 const GET_GREETINGS_SUCCESS = 'GET_GREETINGS_SUCCESS';
 
+
 function getGreeting() {
+  console.log('getGreeting(), Action!!');
   return (dispatch) => {
     dispatch({ type: GET_GREETINGS_REQUEST });
-    return fetch('http://127.0.0.1:3001/v1/greetings')
+    return fetch('http://127.0.0.1:3000/v1/greetings')
       .then((response) => response.json())
       .then((json) => {
         dispatch(getGreetingsSuccess(json));
