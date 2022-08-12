@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "off",
+    "no-shadow": "off"
+  },
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ],
+  "rules": {
+    "object-curly-newline": "off",
+    "arrow-parens": "off",
+    "eol-last": "off",
+    "comma-dangle": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-indent": "off",
+    "import/order": "off",
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "react/button-has-type": "off",
+    "react/jsx-one-expression-per": "off",
+    "react/jsx-fragments": "off",
+    "space-before-function-paren": "off",
+    "react/prefer-stateless-funct": "off",
+    "no-use-before-define": "off",
+    "no-multiple-empty-lines": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/prefer-stateless-function": "off",
+    "no-unused-vars": "off",
+    "no-param-reassign": "off",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "off",
+    "import/prefer-default-export": "off",
+    "comma-style": "off",
+    "space-in-parens": "off",
+    "indent": "off",
+    "object-curly-spacing": "off",
+    "space-before-blocks": "off",
+    "react/jsx-equals-spacing": "off",
+    "react/jsx-tag-spacing": "off",
+    "react/jsx-closing-tag-location": "off"
+  }
+}

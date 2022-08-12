@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -9,7 +9,6 @@ const GET_GREETINGS_SUCCESS = 'GET_GREETINGS_SUCCESS';
 
 
 function getGreeting() {
-  console.log('getGreeting(), Action!!');
   return (dispatch) => {
     dispatch({ type: GET_GREETINGS_REQUEST });
     return fetch('http://127.0.0.1:3000/v1/greetings')
@@ -30,7 +29,6 @@ export function getGreetingsSuccess(json) {
 
 class Greeting extends React.Component {
   render () {
-    console.log(`this is ${this.props.greetings}`)
     return (
       <React.Fragment>
         Greeting: {this.props.greetings}
